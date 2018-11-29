@@ -1,11 +1,17 @@
 
 var xMoves = [];
 var oMoves = [];
+var isOver = false; // see whether game is ended
 
 $(document).ready(function () {
   var player = "x";
 
   $("td").on("click", function () {
+
+    // Function so that player can not do any more moves once win the game
+    if (isOver) {
+        return;
+      } 
 
     var marked = $(this);
 
@@ -18,7 +24,8 @@ $(document).ready(function () {
         xMoves.push(this.id);
         console.log(xMoves);
         if (checkDiag(diagArr(3, 1), xMoves) || checkDiag(diagArr(3, 0), xMoves) || checkOther(xMoves)) {
-          alert("X wins!")
+            $("#message").text("Player X wins!") // if either one of 3 winning conditions meet,
+            isOver = true; // game is ended
         } else {
           player = "o";
           $("#message").text("It's O's turn!")
@@ -29,7 +36,8 @@ $(document).ready(function () {
         marked.addClass("o");
         oMoves.push(this.id);
         if (checkDiag(diagArr(3, 1), oMoves) || checkDiag(diagArr(3, 0), oMoves) || checkOther(oMoves)) {
-          alert("O wins!")
+            $("#message").text("Player O wins!")
+          isOver = true;
         } else {
           player = "x";
           $("#message").text("It's X's turn!")
