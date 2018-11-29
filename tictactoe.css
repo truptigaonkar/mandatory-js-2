@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Sigmar+One);
 
 body {
-  background-color: #81CFE0;
+  background-color: black;
   font: 700 20px/1.5 'Indie Flower', cursive;
   text-align: center;
 }
@@ -49,8 +49,12 @@ td {
 
 #message {
   font-size: 20px;
-  color: #FFF;
+  color: yellowgreen;
   margin-top: 10px;
+  border: 3px dotted orangered;
+}
+h1{
+    color: aqua;
 }
 
 .button {
