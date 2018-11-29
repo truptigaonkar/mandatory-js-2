@@ -1,9 +1,9 @@
-var xMoves = [];
-var oMoves = [];
-var isOver = false; // see whether game is ended
+let xMoves = [];
+let oMoves = [];
+let isOver = false; // see whether game is ended
 
 $(document).ready(function () {
-    var player = "x";
+    let player = "x";
 
     // Reset button functionality
     $("button").on("click", function () {
@@ -17,7 +17,7 @@ $(document).ready(function () {
             return;
         }
 
-        var marked = $(this);
+        let marked = $(this);
 
         if (marked.hasClass("x") || marked.hasClass("o")) {
             alert("Please choose another square!")
@@ -56,12 +56,12 @@ $(document).ready(function () {
         }
     });
 
-    var diagArr = function (size, booleanNum) {
-        var row = [];
-        var col = [];
-        var diagonal = [];
+    let diagArr = function (size, booleanNum) {
+        let row = [];
+        let col = [];
+        let diagonal = [];
 
-        for (var i = 1; i <= size; i++) {
+        for (let i = 1; i <= size; i++) {
             i = String(i);
             row.push(i);
 
@@ -72,15 +72,15 @@ $(document).ready(function () {
             }
         }
 
-        for (var i = 0; i < row.length; i++) {
+        for (let i = 0; i < row.length; i++) {
             diagonal.push(row[i] + col[i]);
         }
         return diagonal;
     };
 
-    var checkDiag = function (diagonal, playerMoves) {
+    let checkDiag = function (diagonal, playerMoves) {
 
-        for (var i = 0; i < diagonal.length; i++) {
+        for (let i = 0; i < diagonal.length; i++) {
             if (playerMoves.indexOf(diagonal[i]) === -1) {
                 return false;
             }
@@ -88,11 +88,11 @@ $(document).ready(function () {
         return true;
     };
 
-    var checkOther = function (playerMoves) {
-        var row = [];
-        var col = [];
+    let checkOther = function (playerMoves) {
+        let row = [];
+        let col = [];
 
-        for (var i = 0; i < playerMoves.length; i++) {
+        for (let i = 0; i < playerMoves.length; i++) {
             row.push(Number(playerMoves[i][0]));
             col.push(Number(playerMoves[i][1]));
         }
@@ -100,13 +100,13 @@ $(document).ready(function () {
         row.sort();
         col.sort();
 
-        for (var i = 0; i < row.length; i++) {
+        for (let i = 0; i < row.length; i++) {
             if (row[i] === row[i + 1] && row[i] === row[i + 2]) {
                 return true;
             }
         }
 
-        for (var i = 0; i < col.length; i++) {
+        for (let i = 0; i < col.length; i++) {
             if (col[i] === col[i + 1] && col[i] === col[i + 2]) {
                 return true;
             }
