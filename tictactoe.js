@@ -31,12 +31,18 @@ $(document).ready(function () {
                     $("#message").text("Player X wins!") // if either one of 3 winning conditions meet,
                     isOver = true; // game is ended
                 } else {
+
+                    //Draw functionality - X reaches the last step 5 and not winning (as X started first so always it goes 5 steps and O goes 4 steps), it's a draw
+                    if (xMoves.length === 5) {
+                        $("#message").text("It's a draw!")
+                        isOver = true;
+                        return;
+                    } 
+
                     player = "o";
                     $("#message").text("It's O's turn!")
-
                 }
             } else {
-
                 marked.addClass("o");
                 oMoves.push(this.id);
                 if (checkDiag(diagArr(3, 1), oMoves) || checkDiag(diagArr(3, 0), oMoves) || checkOther(oMoves)) {
