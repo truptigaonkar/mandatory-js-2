@@ -1,3 +1,7 @@
+---
+permalink: /index.html
+---
+
 # TIC-TAC-TOE - JavaScript & jQuery 
 * A complete game of tic-tac-toe can be played in the browser between two players (taking turns on the same computer).
 * When the game is over, you shouldn't be able to do any more moves.
