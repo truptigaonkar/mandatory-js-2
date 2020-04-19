@@ -1,4 +1,5 @@
 ## TIC-TAC-TOE - JavaScript & jQuery - [Live Demo]( https://truptigaonkar.github.io/mandatory-js-2/)
+![mandatory-js-2](https://user-images.githubusercontent.com/14937374/79688286-a88b1000-824d-11ea-993e-51baeae20e94.gif)
 * A complete game of tic-tac-toe can be played in the browser between two players (taking turns on the same computer).
 * When the game is over, you shouldn't be able to do any more moves.
 * When the game is over, you can refresh the game and start a new game (without page refreshing). This should not happen automatically.
